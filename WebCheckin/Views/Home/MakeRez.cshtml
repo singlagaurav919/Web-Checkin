@@ -1,0 +1,75 @@
+﻿@model WebCheckin.Models.Reservations
+
+@{
+    ViewBag.Title = "MakeRez";
+}
+
+<h2>MakeRez</h2>
+
+<div>
+    <h4>Reservations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoAdult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoAdult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RezStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RezStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageSrc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageSrc)
+        </dd>
+
+    </dl>
+    @Html.DisplayFor(model => model.ArrivalDate);
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RezId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

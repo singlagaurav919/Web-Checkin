@@ -1,0 +1,104 @@
+﻿<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+        }
+
+        .tg .tg-yw4l {
+            vertical-align: top
+        }
+</style>
+@{
+    ViewBag.Title = "Customizations";
+}
+
+<div class="jumbotron">
+    <h1>Customizations</h1>
+
+
+
+    <form method="post" action="Thankyou">
+        <fieldset>
+            <legend>What do you need?</legend>
+            <table class="tg">
+                <tr>
+                    <th class="tg-yw4l">Facility</th>
+                    <th class="tg-yw4l">Yes/No</th>
+                    <th class="tg-yw4l">Price(Rs)</th>
+                    <th class="tg-yw4l"></th>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l"><label for="Checkbox1">Add extra bed?</label></td>
+                    <td class="tg-yw4l"><input id="Checkbox1" type="checkbox" class="checkbox" value=""/></td>
+                    <td class="tg-yw4l"><label id="hi">1000</label></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l"><label for="Checkbox2">Need laundry?</label></td>
+                    <td class="tg-yw4l"><input id="Checkbox2" type="checkbox" class="checkbox" /></td>
+                    <td class="tg-yw4l"><label>500</label></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l"><label for="Checkbox3">Need Breakfast</label></td>
+                    <td class="tg-yw4l"> <input id="Checkbox3" type="checkbox" class="checkbox" /></td>
+                    <td class="tg-yw4l">  <label>200</label></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l"> <label for="Checkbox4">Need Lunch</label></td>
+                    <td class="tg-yw4l"><input id="Checkbox4" type="checkbox" class="checkbox" /></td>
+                    <td class="tg-yw4l"><label>300</label></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+            </table>
+            <label>Total cost = </label>
+            <label id="totalcost">0</label>
+            <div>
+                <input type="submit" value="Proceed/Payment" class="submit" />
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+
+    var cost = 0;
+    $("input.checkbox").change(function () {
+        // this will contain a reference to the checkbox
+        
+        if (this.checked) {
+            // the checkbox is now checked
+            console.log(parseInt($("#hi").innerHTML));
+            cost += 0;
+        } else {
+            // the checkbox is now no longer checked
+            cost -= 100;
+        }
+        $("#totalcost").html(cost);
+    });
+
+</script>

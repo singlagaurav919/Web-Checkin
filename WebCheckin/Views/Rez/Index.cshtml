@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WebCheckin.Models.Reservations>
+
+@if(null != TempData["alertMessage"])
+{
+<script type="text/javascript">
+    alert("@TempData["alertMessage"]");
+</script>
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RezId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoAdult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoRoom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RezStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageSrc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Label("confidential")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoAdult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoRoom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RezStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageSrc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id=item.RezId}) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.RezId  })
+        </td>
+    </tr>
+}
+
+</table>

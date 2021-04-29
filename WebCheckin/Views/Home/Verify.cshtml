@@ -1,0 +1,58 @@
+﻿@model string
+@{
+    ViewBag.Title = "Verify";
+}
+
+<div class="jumbotron">
+    <h1>Step 2</h1>
+
+    <form method="post" action="Customizations">
+        <fieldset>
+            <legend>Enter details:</legend>
+            <div>
+                <label>Full Name</label>
+                <input type="text" name="FullName" value="" />
+            </div>
+            <div>
+                <label>Document Type</label>
+                <select>
+                    <option>Passport</option>
+                    <option>Aadhar</option>
+                    <option>Driving License</option>
+                </select>
+
+                <label>Document No.</label>
+                <input type="text" name="RezNo" value="" />
+            </div>
+            <div>
+                <label>Upload Image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </label>
+                
+            </div>
+            <div>
+                <br/>
+                <label>Country &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <input type="text" name="LastName" value=""/>
+            </div>
+            <div>
+                <input type="submit" value="Proceed" class="submit" />
+            </div>
+        </fieldset>
+    </form>
+
+
+    @using (Html.BeginForm("Verify", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input name="uploadFile" type="file" />
+        <input type="submit" value="Upload File" />
+    }
+    <br/>
+    @if (!string.IsNullOrEmpty(Model))
+    {
+        <img src="@Url.Content(Model)" alt="" />
+    }
+                 
+
+</div>
+
+
+

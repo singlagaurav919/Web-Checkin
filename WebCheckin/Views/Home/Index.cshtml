@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to Sabre Web Check-In</h1>
+    <p class="lead">Our online check-in solution works on every devices used for a Web use: PC, Mac, tablets and mobile phone.</p>
+    
+    <form method="get" action="Verify">
+        <fieldset>
+            <legend>Enter reservation details</legend>
+            <div>
+                <label for="CompanyName">Reservation No.</label>
+                <input type="text" name="RezNo" value="" />
+            </div>
+            <div>
+                <label for="ContactName">Last Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </label>
+                <input type="text" name="LastName" value="" />
+            </div>
+            <div>
+                <input type="submit" value="Check-In" class="submit" />
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>BENEFITS
+           </h2>
+        <p>
+            Less to do, More time for you.
+        </p>
+       
+    </div>
+    <div class="col-md-4">
+        <h2>ONLINE CHECK-IN</h2>
+        <p>Check-in online in the 48h before you arrive. Room key will be ready for you</p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>FAST CHECK-OUT</h2>
+        <p>Simply return your key</p>
+        
+    </div>
+</div>
